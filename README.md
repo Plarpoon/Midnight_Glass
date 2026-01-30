@@ -1,19 +1,12 @@
-# This addon is officially retired and won't receive any updates for Midnight.
-
-# LS: Glass
+# Midnight Glass
 
 Replacement for the default chat. Smooth as glass!
 
 ![Imgur](https://i.imgur.com/8lj13ch.gif)
 
-## Download
-
-- [Curse](https://www.curseforge.com/wow/addons/ls-glass)
-- [Wago](https://addons.wago.io/addons/ls-glass)
-
 ## Options
 
-Use **`/LSGLASS`** or **`/LSG`** to open the in-game config.
+Use **`/mglass`** or **`/mg`** to open the in-game config.
 
 ## Feedback and Feature Requests
 
@@ -36,6 +29,10 @@ Feel free to add and/or review translations on [Curse](https://www.curseforge.co
 
 **`Q:`** I used Addons CPU Usage and saw big numbers? What's going on?  
 **`A:`** Simply put, WoW chat is insanely inefficient and slow. Without going into technicalities, simply scrolling through the chat history is more CPU intensive than, let's say, idling of an entire addon like ElvUI, and that beast does a lot. Other chat addons get smaller numbers because they don't replace the chat output, everything is still displayed via the default scrolling frame, however, LS: Glass replaces that. That's why all the CPU time spent on scrolling is attributed to it instead of being hidden from your eyes. That said, I do disable all of that on the default chat frames, so you don't get hit by the double whammy.
+
+## Credit
+
+This addon is a drop-in replacement for the now outdated ls_glass, one of the most beautiful looking addons that I have ever had the pleasure to use of which I will always be glad to all its contributors work for, please check their future work as they are clearly talented individuals. [Original ls_glass addon](https://github.com/ls-/ls_Glass).
 
 ## License
 

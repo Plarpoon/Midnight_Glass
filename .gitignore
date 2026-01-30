@@ -1,3 +1,7 @@
+# Created by https://www.toptal.com/developers/gitignore/api/lua
+# Edit at https://www.toptal.com/developers/gitignore?templates=lua
+
+### Lua ###
 # Compiled Lua sources
 luac.out
 
@@ -39,4 +43,5 @@ luac.out
 *.x86_64
 *.hex
 
-tags
+
+# End of https://www.toptal.com/developers/gitignore/api/lua

@@ -104,14 +104,16 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 		end)
 
 		hooksecurefunc("FCF_OpenTemporaryWindow", function(chatType, chatTarget)
-			local chatFrame = chatTarget and (expectedChatFrames[chatType] and expectedChatFrames[chatType][chatTarget]) or expectedChatFrames[chatType]
+			local chatFrame = chatTarget and (expectedChatFrames[chatType] and expectedChatFrames[chatType][chatTarget]) or
+			expectedChatFrames[chatType]
 			if chatFrame then
 				local frame = E:HandleChatFrame(chatFrame, 1)
 				if frame then
 					E:HandleChatTab(_G[chatFrame:GetName() .. "Tab"])
 					E:HandleEditBox(_G[chatFrame:GetName() .. "EditBox"])
 					E:HandleButtonFrame(_G[chatFrame:GetName() .. "ButtonFrame"], _G[chatFrame:GetName()])
-					E:HandleMinimizeButton(_G[chatFrame:GetName() .. "ButtonFrameMinimizeButton"], _G[chatFrame:GetName() .. "Tab"])
+					E:HandleMinimizeButton(_G[chatFrame:GetName() .. "ButtonFrameMinimizeButton"],
+						_G[chatFrame:GetName() .. "Tab"])
 
 					tempChatFrames[frame] = true
 				end
@@ -135,7 +137,7 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 
 		-- ? consider moving it elsewhere
 		local updater = CreateFrame("Frame", "LSGlassUpdater", UIParent)
-		updater:SetScript("OnUpdate", function (self, elapsed)
+		updater:SetScript("OnUpdate", function(self, elapsed)
 			self.elapsed = (self.elapsed or 0) + elapsed
 			if self.elapsed >= 0.01 then
 				for frame in next, chatFrames do
@@ -216,8 +218,8 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 			LibStub("AceConfigDialog-3.0"):Close(addonName)
 		end)
 
-		SLASH_LSGLASS1 = "/lsglass"
-		SLASH_LSGLASS2 = "/lsg"
+		SLASH_LSGLASS1 = "/mglass"
+		SLASH_LSGLASS2 = "/mg"
 		SlashCmdList["LSGLASS"] = function(msg)
 			if msg == "" then
 				if not InCombatLockdown() then
