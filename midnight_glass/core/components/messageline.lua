@@ -48,7 +48,15 @@ do
 		self:SetID(id)
 		self:SetInfo(info)
 		self:SetTimestamp(info.timestamp)
-		self:SetText(info.message, info.r, info.g, info.b)
+
+		-- Prepend timestamp in [HH:MM] format
+		local message = info.message
+		if C.db.profile.chat.timestamp and info.timestamp then
+			local timeStr = date("[%H:%M] ", info.timestamp)
+			message = timeStr .. message
+		end
+
+		self:SetText(message, info.r, info.g, info.b)
 		self:Show()
 	end
 

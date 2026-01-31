@@ -239,12 +239,5 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 				end
 			end
 		end
-
-		SLASH_MGDEBUG1 = "/mgdebug"
-		SlashCmdList["MGDEBUG"] = function(msg)
-			C.db.profile.debug = not C.db.profile.debug
-			E.DEBUG = C.db.profile.debug
-			print("|cff00ff00[MidnightGlass]|r Debug mode:", E.DEBUG and "|cff00ff00ON|r" or "|cffff0000OFF|r")
-		end
 	end)
 end)
