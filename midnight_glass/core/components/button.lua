@@ -10,6 +10,8 @@ local tonumber = _G.tonumber
 
 -- Mine
 local function updateButtonFramePosition(frame, chatFrame)
+	if not C.db then return end
+
 	frame:ClearAllPoints()
 
 	local position = C.db.profile.dock.buttons.position

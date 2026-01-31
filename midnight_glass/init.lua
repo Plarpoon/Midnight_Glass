@@ -10,7 +10,7 @@ local tonumber = _G.tonumber
 -- Mine
 E.VER = {}
 E.VER.string = C_AddOns.GetAddOnMetadata(addonName, "Version")
-E.VER.number = tonumber(E.VER.string:gsub("%D", ""))
+E.VER.number = tonumber((E.VER.string:gsub("%D", "")))
 
 local function updateCallback()
 	E:UpdateEditBoxFont()
