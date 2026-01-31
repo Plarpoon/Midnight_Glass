@@ -12,7 +12,7 @@ Use **`/mglass`** or **`/mg`** to open the in-game config.
 
 ## Feedback and Feature Requests
 
-If you found a bug or want to share an idea on how to improve my addon, either use the issue tracker on [GitHub](https://github.com/ls-/MIDNIGHT_GLASS/issues) or join my [Discord](https://discord.gg/XeQt33sDg8) server.
+If you found a bug or want to share an idea on how to improve my addon, either use the issue tracker on [GitHub](https://github.com/Plarpoon/Midnight_Glass/issues) or join my [Discord](https://discord.gg/XeQt33sDg8) server.
 
 ## Credit
 
