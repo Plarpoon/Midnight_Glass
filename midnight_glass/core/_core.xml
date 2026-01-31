@@ -7,5 +7,5 @@
 	<Script file="config.lua" />
 	<Include file="components\_components.xml" />
 
-	<Frame name="MGlassHyperlinkPropagator" propagateHyperlinksToParent="true" virtual="true" />
+	<Frame name="MidnightGlassHyperlinkPropagator" propagateHyperlinksToParent="true" virtual="true" />
 </Ui>

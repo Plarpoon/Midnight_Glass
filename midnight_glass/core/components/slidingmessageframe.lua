@@ -1086,7 +1086,7 @@ do
 		function(pool)
 			---@type Frame|table
 			local frame = Mixin(
-				CreateFrame("ScrollFrame", "MGlassFrame" .. curID, UIParent, "MGlassHyperlinkPropagator"),
+				CreateFrame("ScrollFrame", "MidnightGlassFrame" .. curID, UIParent, "MidnightGlassHyperlinkPropagator"),
 				object_proto
 			)
 			frame:EnableMouse(false)
@@ -1100,7 +1100,7 @@ do
 			frame.backfillMessages = {}
 			frame.pool = pool
 
-			local scrollChild = CreateFrame("Frame", nil, frame, "MGlassHyperlinkPropagator")
+			local scrollChild = CreateFrame("Frame", nil, frame, "MidnightGlassHyperlinkPropagator")
 			frame:SetFrameLevel(frame:GetFrameLevel() + 1)
 			frame:SetScrollChild(scrollChild)
 			frame.ScrollChild = scrollChild

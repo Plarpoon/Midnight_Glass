@@ -3,7 +3,7 @@
 ## Version: 120000.01
 ## Title: MidnightGlass: |cffe0bc5bGlass|r
 ## Notes: Smooth as glass.
-## IconTexture: Interface\AddOns\MIDNIGTH_GLASS\assets\logo-64
+## IconTexture: Interface\AddOns\midnight_glass\assets\logo-64
 ## SavedVariables: MIDNIGHT_GLASS_GLOBAL_CONFIG
 ## LoadSavedVariablesFirst: 1
 ## OptionalDeps: ElvUI

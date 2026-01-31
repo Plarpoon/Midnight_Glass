@@ -198,11 +198,11 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 			end
 		end)
 
-		Settings.RegisterAddOnCategory(Settings.RegisterCanvasLayoutCategory(panel, L["MIDNIGTH_GLASS"]))
+		Settings.RegisterAddOnCategory(Settings.RegisterCanvasLayoutCategory(panel, L["MIDNIGHT_GLASS"]))
 
 		AddonCompartmentFrame:RegisterAddon({
-			text = L["MIDNIGTH_GLASS"],
-			icon = "Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\logo-32",
+			text = L["MIDNIGHT_GLASS"],
+			icon = "Interface\\AddOns\\midnight_glass\\assets\\logo-32",
 			func = function()
 				if not InCombatLockdown() then
 					if not C.options then

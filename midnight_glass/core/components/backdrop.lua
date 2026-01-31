@@ -28,7 +28,7 @@ function E:CreateBackdrop(parent, alpha, xOffset, yOffset)
 	backdrop:SetPoint("BOTTOMRIGHT", -(xOffset or 0), yOffset or 0)
 	backdrop:SetBackdrop({
 		bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
-		edgeFile = "Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\border",
+		edgeFile = "Interface\\AddOns\\midnight_glass\\assets\\border",
 		tile = true,
 		tileEdge = true,
 		tileSize = 8,

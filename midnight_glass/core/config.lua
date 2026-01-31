@@ -297,7 +297,7 @@ function E:CreateConfig()
 
 	C.options = {
 		type = "group",
-		name = "|cffffffff" .. L["MIDNIGTH_GLASS"] .. "|r",
+		name = "|cffffffff" .. L["MIDNIGHT_GLASS"] .. "|r",
 		args = {
 			general = {
 				order = 10,
@@ -741,7 +741,7 @@ function E:CreateConfig()
 					desc = {
 						order = 1,
 						type = "description",
-						name = L["MIDNIGTH_GLASS"] .. " |cffffd200v|r" .. E.VER.string,
+						name = L["MIDNIGHT_GLASS"] .. " |cffffd200v|r" .. E.VER.string,
 						width = "full",
 						fontSize = "medium",
 					},
