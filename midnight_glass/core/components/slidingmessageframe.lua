@@ -1200,8 +1200,18 @@ do
 
 	function E:ForChatFrame(id, method, ...)
 		local frame = frames[id]
-		if frame and frame[method] then
-			frame[method](frame, ...)
+
+		if not frame then
+			E:DebugPrint("ForChatFrame: Frame", id, "doesn't exist")
+			return false
 		end
+
+		if not frame[method] then
+			E:DebugPrint("ForChatFrame: Method", method, "doesn't exist on frame", id)
+			return false
+		end
+
+		frame[method](frame, ...)
+		return true
 	end
 end

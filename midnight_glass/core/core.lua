@@ -26,6 +26,14 @@ _G[addonName] = {
 -- TEXT PROCESSOR --
 --------------------
 
+E.DEBUG = false
+
+function E:DebugPrint(...)
+	if self.DEBUG then
+		print("|cff00ff00[MidnightGlass]|r", ...)
+	end
+end
+
 do
 	local TEXT_PROCESSORS = {
 		-- function(text)

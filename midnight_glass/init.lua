@@ -135,17 +135,23 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 			end
 		end)
 
-		-- ? consider moving it elsewhere
-		local updater = CreateFrame("Frame", "MGlassUpdater", UIParent)
+		local updater = CreateFrame("Frame", "MidnightGlassUpdater", UIParent)
+		local UPDATE_INTERVAL = 0.033 -- ~30 FPS, smoother than needed
+
 		updater:SetScript("OnUpdate", function(self, elapsed)
 			self.elapsed = (self.elapsed or 0) + elapsed
-			if self.elapsed >= 0.01 then
-				for frame in next, chatFrames do
-					frame:OnFrame()
+			if self.elapsed >= UPDATE_INTERVAL then
+				-- Only iterate if there are frames
+				if next(chatFrames) then
+					for frame in next, chatFrames do
+						frame:OnFrame()
+					end
 				end
 
-				for frame in next, tempChatFrames do
-					frame:OnFrame()
+				if next(tempChatFrames) then
+					for frame in next, tempChatFrames do
+						frame:OnFrame()
+					end
 				end
 
 				self.elapsed = 0
@@ -230,6 +236,12 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 					LibStub("AceConfigDialog-3.0"):Open(addonName)
 				end
 			end
+		end
+
+		SLASH_MGDEBUG1 = "/mgdebug"
+		SlashCmdList["MGDEBUG"] = function(msg)
+			E.DEBUG = not E.DEBUG
+			print("|cff00ff00[MidnightGlass]|r Debug mode:", E.DEBUG and "|cff00ff00ON|r" or "|cffff0000OFF|r")
 		end
 	end)
 end)
