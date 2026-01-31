@@ -10,7 +10,7 @@ local tonumber = _G.tonumber
 -- Mine
 E.VER = {}
 E.VER.string = C_AddOns.GetAddOnMetadata(addonName, "Version")
-E.VER.number = tonumber(E.VER.string:gsub("%D", ""), nil)
+E.VER.number = tonumber(E.VER.string:gsub("%D", ""))
 
 local function updateCallback()
 	E:UpdateEditBoxFont()
@@ -46,15 +46,15 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 		return
 	end
 
-	if LS_GLASS_GLOBAL_CONFIG then
-		if LS_GLASS_GLOBAL_CONFIG.profiles then
-			for profile, data in next, LS_GLASS_GLOBAL_CONFIG.profiles do
+	if MIDNIGHT_GLASS_GLOBAL_CONFIG then
+		if MIDNIGHT_GLASS_GLOBAL_CONFIG.profiles then
+			for profile, data in next, MIDNIGHT_GLASS_GLOBAL_CONFIG.profiles do
 				E:Modernize(data, profile, "profile")
 			end
 		end
 	end
 
-	C.db = LibStub("AceDB-3.0"):New("LS_GLASS_GLOBAL_CONFIG", D, true)
+	C.db = LibStub("AceDB-3.0"):New("MIDNIGTH_GLASS_GLOBAL_CONFIG", D, true)
 	C.db:RegisterCallback("OnProfileChanged", updateCallback)
 	C.db:RegisterCallback("OnProfileCopied", updateCallback)
 	C.db:RegisterCallback("OnProfileReset", updateCallback)
@@ -105,7 +105,7 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 
 		hooksecurefunc("FCF_OpenTemporaryWindow", function(chatType, chatTarget)
 			local chatFrame = chatTarget and (expectedChatFrames[chatType] and expectedChatFrames[chatType][chatTarget]) or
-			expectedChatFrames[chatType]
+				expectedChatFrames[chatType]
 			if chatFrame then
 				local frame = E:HandleChatFrame(chatFrame, 1)
 				if frame then
@@ -136,7 +136,7 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 		end)
 
 		-- ? consider moving it elsewhere
-		local updater = CreateFrame("Frame", "LSGlassUpdater", UIParent)
+		local updater = CreateFrame("Frame", "MGlassUpdater", UIParent)
 		updater:SetScript("OnUpdate", function(self, elapsed)
 			self.elapsed = (self.elapsed or 0) + elapsed
 			if self.elapsed >= 0.01 then
@@ -198,11 +198,11 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 			end
 		end)
 
-		Settings.RegisterAddOnCategory(Settings.RegisterCanvasLayoutCategory(panel, L["LS_GLASS"]))
+		Settings.RegisterAddOnCategory(Settings.RegisterCanvasLayoutCategory(panel, L["MIDNIGTH_GLASS"]))
 
 		AddonCompartmentFrame:RegisterAddon({
-			text = L["LS_GLASS"],
-			icon = "Interface\\AddOns\\ls_Glass\\assets\\logo-32",
+			text = L["MIDNIGTH_GLASS"],
+			icon = "Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\logo-32",
 			func = function()
 				if not InCombatLockdown() then
 					if not C.options then
@@ -218,9 +218,9 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 			LibStub("AceConfigDialog-3.0"):Close(addonName)
 		end)
 
-		SLASH_LSGLASS1 = "/mglass"
-		SLASH_LSGLASS2 = "/mg"
-		SlashCmdList["LSGLASS"] = function(msg)
+		SLASH_MGlass1 = "/mglass"
+		SLASH_MGlass2 = "/mg"
+		SlashCmdList["MGlass"] = function(msg)
 			if msg == "" then
 				if not InCombatLockdown() then
 					if not C.options then

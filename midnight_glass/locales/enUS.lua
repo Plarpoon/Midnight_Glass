@@ -9,7 +9,7 @@ local _G = getfenv(0)
 local L = {}
 ns.L = L
 
-L["LS_GLASS"] = "LS: |cffe0bc5bGlass|r"
+L["MIDNIGTH_GLASS"] = "Midnight |cffe0bc5bGlass|r"
 L["CURSEFORGE"] = "CurseForge"
 L["DISCORD"] = "Discord"
 L["GITHUB"] = "GitHub"
@@ -30,7 +30,8 @@ L["BACKGROUND_ALPHA"] = "Background Opacity"
 L["BOTTOM"] = "Bottom"
 L["CHANGELOG"] = "Changelog"
 L["CHANGELOG_FULL"] = "Full"
-L["CONFIG_WARNING"] = "I strongly recommend to |cffffd200/reload|r the UI after you're done setting up the addon or even opening this panel to avoid any errors during combat."
+L["CONFIG_WARNING"] =
+"I strongly recommend to |cffffd200/reload|r the UI after you're done setting up the addon or even opening this panel to avoid any errors during combat."
 L["CONFIRM_RESET"] = "Do you wish to reset \"%s\"?"
 L["COPY_FROM"] = "Copy from"
 L["DOCK"] = "Tabs & Buttons"

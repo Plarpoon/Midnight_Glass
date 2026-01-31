@@ -87,7 +87,7 @@ do
 
 	function setSmoothScroll(frame, func, change, callback)
 		-- func, time, start, change, callback
-		activeFrames[frame] = {func, 0, frame:GetVerticalScroll(), change, callback}
+		activeFrames[frame] = { func, 0, frame:GetVerticalScroll(), change, callback }
 
 		if not smoother:GetScript("OnUpdate") then
 			smoother:SetScript("OnUpdate", onUpdate)
@@ -840,7 +840,8 @@ function object_proto:RefreshActive(startIndex, maxPixels)
 
 	if lineIndex > 0 then
 		-- 2 is kinda arbitrary, I just want to make sure that only the first line of the last message is visible at the top
-		self:SetLastActiveMessageInfo(messageID, self.activeMessages[lineIndex]:GetTop() - self:GetBottom() - self:GetMessageLineHeight() + 2)
+		self:SetLastActiveMessageInfo(messageID,
+			self.activeMessages[lineIndex]:GetTop() - self:GetBottom() - self:GetMessageLineHeight() + 2)
 	end
 
 	-- just hide the excess, releasing and removing them here is expensive, they'll be taken care of when the frame gets
@@ -873,7 +874,8 @@ function object_proto:FastForward()
 			self:RefreshActive(id)
 			self:RefreshBackfill(id - 1, id - 1)
 			self:EnableIncomingProcessing(true)
-			self:SetSmoothScroll(self.funcCache.baseScroll, self:GetNegativeVerticalOffset(), self.funcCache.baseScrollCallback)
+			self:SetSmoothScroll(self.funcCache.baseScroll, self:GetNegativeVerticalOffset(),
+				self.funcCache.baseScrollCallback)
 		else
 			local offset = self:GetNegativeVerticalOffset()
 			if offset > 0 then
@@ -913,7 +915,8 @@ function object_proto:OnMouseWheel(delta, scrollOverride)
 
 	self:ResetState(true)
 
-	local numLines = scrollOverride or (IsShiftKeyDown() and MAX_SCROLL or IsControlKeyDown() and MIN_SCROLL or MED_SCROLL)
+	local numLines = scrollOverride or
+		(IsShiftKeyDown() and MAX_SCROLL or IsControlKeyDown() and MIN_SCROLL or MED_SCROLL)
 	local offset = numLines * self:GetMessageLineHeight()
 
 	if delta == DOWN then
@@ -1067,7 +1070,8 @@ end
 
 function object_proto:ProcessIncoming(num)
 	self:RefreshBackfill(num, num, nil, true)
-	self:SetSmoothScroll(self.funcCache.baseScroll, self:GetLastBackfillMessageOffset(), self.funcCache.baseScrollCallback)
+	self:SetSmoothScroll(self.funcCache.baseScroll, self:GetLastBackfillMessageOffset(),
+		self.funcCache.baseScrollCallback)
 end
 
 function object_proto:Release()
@@ -1080,7 +1084,11 @@ do
 
 	local slidingMessageFramePool = CreateUnsecuredObjectPool(
 		function(pool)
-			local frame = Mixin(CreateFrame("ScrollFrame", "LSGlassFrame" .. curID, UIParent, "LSGlassHyperlinkPropagator"), object_proto)
+			---@type Frame|table
+			local frame = Mixin(
+				CreateFrame("ScrollFrame", "MGlassFrame" .. curID, UIParent, "MGlassHyperlinkPropagator"),
+				object_proto
+			)
 			frame:EnableMouse(false)
 			frame:Hide()
 
@@ -1092,7 +1100,7 @@ do
 			frame.backfillMessages = {}
 			frame.pool = pool
 
-			local scrollChild = CreateFrame("Frame", nil, frame, "LSGlassHyperlinkPropagator")
+			local scrollChild = CreateFrame("Frame", nil, frame, "MGlassHyperlinkPropagator")
 			frame:SetFrameLevel(frame:GetFrameLevel() + 1)
 			frame:SetScrollChild(scrollChild)
 			frame.ScrollChild = scrollChild
@@ -1163,6 +1171,7 @@ do
 			-- backdrop:SetBackdropColor(0, 0, 0, 0.4)
 			-- backdrop:SetBackdropBorderColor(0, 0, 0, 0.4)
 
+			---@diagnostic disable-next-line: need-check-nil
 			frames[curID] = frame
 
 			return frame

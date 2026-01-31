@@ -10,7 +10,7 @@ local t_insert = _G.table.insert
 -- Mine
 local LSM = LibStub("LibSharedMedia-3.0")
 
-local alphabets = {"roman", "korean", "simplifiedchinese", "traditionalchinese", "russian"}
+local alphabets = { "roman", "korean", "simplifiedchinese", "traditionalchinese", "russian" }
 
 local defaultAlphabet = "roman"
 local locale = GetLocale()
@@ -59,7 +59,7 @@ function E:CreateFonts()
 	end
 
 	for i = 1, Constants.ChatFrameConstants.MaxChatWindows do
-		local font = CreateFontFamily("LSGlassMessageFont" .. i, members)
+		local font = CreateFontFamily("MGlassMessageFont" .. i, members)
 		local newSize = C.db.profile.chat[i].font.size
 		local newOutline = C.db.profile.chat[i].font.outline and "OUTLINE" or ""
 		local newShadow = C.db.profile.chat[i].font.shadow
@@ -89,7 +89,7 @@ function E:CreateFonts()
 		font:SetJustifyV("MIDDLE")
 	end
 
-	local font = CreateFontFamily("LSGlassEditBoxFont", members)
+	local font = CreateFontFamily("MGlassEditBoxFont", members)
 	local newSize = C.db.profile.edit.font.size
 	local newOutline = C.db.profile.edit.font.outline and "OUTLINE" or ""
 	local newShadow = C.db.profile.edit.font.shadow
@@ -120,7 +120,7 @@ function E:CreateFonts()
 end
 
 function E:UpdateMessageFont(id)
-	local font = _G["LSGlassMessageFont" .. id]
+	local font = _G["MGlassMessageFont" .. id]
 	local newSize = C.db.profile.chat[id].font.size
 	local newOutline = C.db.profile.chat[id].font.outline and "OUTLINE" or ""
 	local newShadow = C.db.profile.chat[id].font.shadow
@@ -160,7 +160,7 @@ function E:UpdateEditBoxFont()
 	local newShadow = C.db.profile.edit.font.shadow
 
 	for _, alphabet in next, alphabets do
-		local alphabetFont = LSGlassEditBoxFont:GetFontObjectForAlphabet(alphabet)
+		local alphabetFont = MGlassEditBoxFont:GetFontObjectForAlphabet(alphabet)
 		if alphabetFont then
 			local replaceFont = fontData[alphabet].isDefault or C.db.profile.font.override[alphabet]
 
@@ -178,6 +178,6 @@ function E:UpdateEditBoxFont()
 		end
 	end
 
-	LSGlassEditBoxFont:SetJustifyH("LEFT")
-	LSGlassEditBoxFont:SetJustifyV("MIDDLE")
+	MGlassEditBoxFont:SetJustifyH("LEFT")
+	MGlassEditBoxFont:SetJustifyV("MIDDLE")
 end

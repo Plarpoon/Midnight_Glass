@@ -39,8 +39,8 @@ function E:CreateGradientBackground(object, width, a)
 		object.leftBg:SetTexelSnappingBias(0)
 		object.leftBg:SetColorTexture(1, 1, 1, 1)
 
-		object.leftBg.fromColor = {r = 0, g = 0, b = 0, a = 0}
-		object.leftBg.toColor = {r = 0, g = 0, b = 0, a = a}
+		object.leftBg.fromColor = { r = 0, g = 0, b = 0, a = 0 }
+		object.leftBg.toColor = { r = 0, g = 0, b = 0, a = a }
 	end
 
 	object.leftBg:SetWidth(E:Round(width * 0.15))
@@ -54,8 +54,8 @@ function E:CreateGradientBackground(object, width, a)
 		object.rightBg:SetTexelSnappingBias(0)
 		object.rightBg:SetColorTexture(1, 1, 1, 1)
 
-		object.rightBg.fromColor = {r = 0, g = 0, b = 0, a = a}
-		object.rightBg.toColor = {r = 0, g = 0, b = 0, a = 0}
+		object.rightBg.fromColor = { r = 0, g = 0, b = 0, a = a }
+		object.rightBg.toColor = { r = 0, g = 0, b = 0, a = 0 }
 	end
 
 	object.rightBg:SetWidth(E:Round(width * 0.45))

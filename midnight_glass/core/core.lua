@@ -6,7 +6,7 @@ local _G = getfenv(0)
 local error = _G.error
 local ipairs = _G.ipairs
 local m_floor = _G.math.floor
-local next= _G.next
+local next = _G.next
 local pcall = _G.pcall
 local s_format = _G.string.format
 local t_insert = _G.table.insert
@@ -70,7 +70,7 @@ do
 end
 
 do
-	local oneTimeEvents = {ADDON_LOADED = false, PLAYER_LOGIN = false}
+	local oneTimeEvents = { ADDON_LOADED = false, PLAYER_LOGIN = false }
 	local registeredEvents = {}
 
 	local dispatcher = CreateFrame("Frame", "LSGEventFrame")
@@ -181,7 +181,7 @@ do
 	local objects = {}
 	local add, remove
 
-	local updater = CreateFrame("Frame", "LSGlassFader")
+	local updater = CreateFrame("Frame", "MGlassFader")
 
 	local function updater_OnUpdate(_, elapsed)
 		for object, data in next, objects do

@@ -85,7 +85,7 @@ local function configReset(info)
 
 	local name = option.name
 	if type(option.name) == "function" then
-		name = option.name({info[#info - 1]})
+		name = option.name({ info[#info - 1] })
 	end
 
 	return L["CONFIRM_RESET"]:format(name)
@@ -120,6 +120,7 @@ end
 
 local function getChatFrameName(info)
 	local id = tonumber(info[#info])
+	---@cast id number
 	return GetChatWindowInfo(id)
 end
 
@@ -199,7 +200,10 @@ local function createChatFrameConfig(id, order)
 				type = "range",
 				name = L["BACKGROUND_ALPHA"],
 				hidden = false,
-				min = 0, max = 1, step = 0.01, bigStep = 0.1,
+				min = 0,
+				max = 1,
+				step = 0.01,
+				bigStep = 0.1,
 				set = function(_, value)
 					if C.db.profile.chat[id].alpha ~= value then
 						C.db.profile.chat[id].alpha = value
@@ -214,7 +218,9 @@ local function createChatFrameConfig(id, order)
 				type = "range",
 				name = L["X_PADDING"],
 				hidden = false,
-				min = 1, max = 20, step = 1,
+				min = 1,
+				max = 20,
+				step = 1,
 				set = function(_, value)
 					if C.db.profile.chat[id].x_padding ~= value then
 						C.db.profile.chat[id].x_padding = value
@@ -228,7 +234,9 @@ local function createChatFrameConfig(id, order)
 				type = "range",
 				name = L["Y_PADDING"],
 				hidden = false,
-				min = 0, max = 10, step = 1,
+				min = 0,
+				max = 10,
+				step = 1,
 				set = function(_, value)
 					if C.db.profile.chat[id].y_padding ~= value then
 						C.db.profile.chat[id].y_padding = value
@@ -262,7 +270,9 @@ local function createChatFrameConfig(id, order)
 						order = 1,
 						type = "range",
 						name = L["SIZE"],
-						min = 8, max = 32, step = 1,
+						min = 8,
+						max = 32,
+						step = 1,
 					},
 					outline = {
 						order = 2,
@@ -287,7 +297,7 @@ function E:CreateConfig()
 
 	C.options = {
 		type = "group",
-		name = "|cffffffff" .. L["LS_GLASS"] .. "|r",
+		name = "|cffffffff" .. L["MIDNIGTH_GLASS"] .. "|r",
 		args = {
 			general = {
 				order = 10,
@@ -318,7 +328,8 @@ function E:CreateConfig()
 								dialogControl = "LSM30_Font",
 								values = LibStub("LibSharedMedia-3.0"):HashTable("font"),
 								get = function()
-									return LibStub("LibSharedMedia-3.0"):IsValid("font", C.db.profile.font.name) and C.db.profile.font.name or LibStub("LibSharedMedia-3.0"):GetDefault("font")
+									return LibStub("LibSharedMedia-3.0"):IsValid("font", C.db.profile.font.name) and
+										C.db.profile.font.name or LibStub("LibSharedMedia-3.0"):GetDefault("font")
 								end,
 								set = function(_, value)
 									if C.db.profile.font.name ~= value then
@@ -400,7 +411,10 @@ function E:CreateConfig()
 								order = 1,
 								type = "range",
 								name = L["BACKGROUND_ALPHA"],
-								min = 0, max = 1, step = 0.01, bigStep = 0.1,
+								min = 0,
+								max = 1,
+								step = 0.01,
+								bigStep = 0.1,
 								get = function()
 									return C.db.profile.dock.alpha
 								end,
@@ -486,7 +500,10 @@ function E:CreateConfig()
 								order = 1,
 								type = "range",
 								name = L["BACKGROUND_ALPHA"],
-								min = 0, max = 1, step = 0.01, bigStep = 0.1,
+								min = 0,
+								max = 1,
+								step = 0.01,
+								bigStep = 0.1,
 								set = function(_, value)
 									if C.db.profile.edit.alpha ~= value then
 										C.db.profile.edit.alpha = value
@@ -515,7 +532,9 @@ function E:CreateConfig()
 								order = 3,
 								type = "range",
 								name = L["OFFSET"],
-								min = 0, max = 64, step = 1,
+								min = 0,
+								max = 64,
+								step = 1,
 								set = function(_, value)
 									if C.db.profile.edit.offset ~= value then
 										C.db.profile.edit.offset = value
@@ -570,7 +589,9 @@ function E:CreateConfig()
 										order = 1,
 										type = "range",
 										name = L["SIZE"],
-										min = 10, max = 20, step = 1,
+										min = 10,
+										max = 20,
+										step = 1,
 									},
 									outline = {
 										order = 2,
@@ -677,7 +698,10 @@ function E:CreateConfig()
 										order = 3,
 										type = "range",
 										name = L["FADE_OUT_DELAY"],
-										min = 10, max = 240, step = 1, bigStep = 10,
+										min = 10,
+										max = 240,
+										step = 1,
+										bigStep = 10,
 										disabled = function()
 											return not C.db.profile.chat.fade.enabled
 										end,
@@ -695,15 +719,15 @@ function E:CreateConfig()
 								},
 							},
 							spacer_2 = createSpacer(19),
-							[ "1"] = createChatFrameConfig(1, 20), -- general
+							["1"] = createChatFrameConfig(1, 20), -- general
 							-- [ "2"] = createChatFrameConfig(2, 21), -- combat log
-							[ "3"] = createChatFrameConfig(3, 22), -- voice
-							[ "4"] = createChatFrameConfig(4, 23),
-							[ "5"] = createChatFrameConfig(5, 24),
-							[ "6"] = createChatFrameConfig(6, 25),
-							[ "7"] = createChatFrameConfig(7, 26),
-							[ "8"] = createChatFrameConfig(8, 27),
-							[ "9"] = createChatFrameConfig(9, 28),
+							["3"] = createChatFrameConfig(3, 22), -- voice
+							["4"] = createChatFrameConfig(4, 23),
+							["5"] = createChatFrameConfig(5, 24),
+							["6"] = createChatFrameConfig(6, 25),
+							["7"] = createChatFrameConfig(7, 26),
+							["8"] = createChatFrameConfig(8, 27),
+							["9"] = createChatFrameConfig(9, 28),
 							["10"] = createChatFrameConfig(10, 29),
 						},
 					},
@@ -717,7 +741,7 @@ function E:CreateConfig()
 					desc = {
 						order = 1,
 						type = "description",
-						name = L["LS_GLASS"] .. " |cffffd200v|r" .. E.VER.string,
+						name = L["MIDNIGTH_GLASS"] .. " |cffffd200v|r" .. E.VER.string,
 						width = "full",
 						fontSize = "medium",
 					},
@@ -741,7 +765,7 @@ function E:CreateConfig()
 								type = "execute",
 								name = L["GITHUB"],
 								func = function()
-									showLinkCopyPopup("https://github.com/ls-/ls_Glass/issues")
+									showLinkCopyPopup("https://github.com/ls-/MIDNIGTH_GLASS/issues")
 								end,
 							},
 						},
@@ -791,7 +815,7 @@ function E:CreateConfig()
 								type = "execute",
 								name = L["CHANGELOG_FULL"],
 								func = function()
-									showLinkCopyPopup("https://github.com/ls-/ls_Glass/blob/master/CHANGELOG.md")
+									showLinkCopyPopup("https://github.com/ls-/MIDNIGTH_GLASS/blob/master/CHANGELOG.md")
 								end,
 							},
 						},

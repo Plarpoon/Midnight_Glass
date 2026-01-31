@@ -42,11 +42,11 @@ function E:HandleEditBox(frame)
 		frame:SetPoint("BOTTOMRIGHT", frame.chatFrame, "BOTTOMRIGHT", 0, -C.db.profile.edit.offset)
 	end
 
-	frame:SetFontObject("LSGlassEditBoxFont")
-	frame.header:SetFontObject("LSGlassEditBoxFont")
-	frame.headerSuffix:SetFontObject("LSGlassEditBoxFont")
-	frame.NewcomerHint:SetFontObject("LSGlassEditBoxFont")
-	frame.prompt:SetFontObject("LSGlassEditBoxFont")
+	frame:SetFontObject("MGlassEditBoxFont")
+	frame.header:SetFontObject("MGlassEditBoxFont")
+	frame.headerSuffix:SetFontObject("MGlassEditBoxFont")
+	frame.NewcomerHint:SetFontObject("MGlassEditBoxFont")
+	frame.prompt:SetFontObject("MGlassEditBoxFont")
 end
 
 function E:UpdateEditBoxPosition()

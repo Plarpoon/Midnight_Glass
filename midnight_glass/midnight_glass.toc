@@ -1,10 +1,10 @@
 ## Interface: 120000
 ## Author: plarpoon
 ## Version: 120000.01
-## Title: LS: |cffe0bc5bGlass|r
+## Title: MidnightGlass: |cffe0bc5bGlass|r
 ## Notes: Smooth as glass.
-## IconTexture: Interface\AddOns\ls_Glass\assets\logo-64
-## SavedVariables: LS_GLASS_GLOBAL_CONFIG
+## IconTexture: Interface\AddOns\MIDNIGTH_GLASS\assets\logo-64
+## SavedVariables: MIDNIGHT_GLASS_GLOBAL_CONFIG
 ## LoadSavedVariablesFirst: 1
 ## OptionalDeps: ElvUI
 

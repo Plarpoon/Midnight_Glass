@@ -21,14 +21,14 @@ do
 	end
 end
 
-function E:CreateBackdrop(parent, alpha,  xOffset, yOffset)
+function E:CreateBackdrop(parent, alpha, xOffset, yOffset)
 	local backdrop = Mixin(CreateFrame("Frame", nil, parent, "BackdropTemplate"), backdrop_proto)
 	backdrop:SetFrameLevel(parent:GetFrameLevel() - 1)
 	backdrop:SetPoint("TOPLEFT", xOffset or 0, -(yOffset or 0))
 	backdrop:SetPoint("BOTTOMRIGHT", -(xOffset or 0), yOffset or 0)
 	backdrop:SetBackdrop({
 		bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
-		edgeFile = "Interface\\AddOns\\ls_Glass\\assets\\border",
+		edgeFile = "Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\border",
 		tile = true,
 		tileEdge = true,
 		tileSize = 8,

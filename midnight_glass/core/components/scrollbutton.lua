@@ -8,10 +8,10 @@ local unpack = _G.unpack
 
 -- Mine
 local ICONS = {
-	{0 / 128, 52 / 128, 0 / 128, 52 / 128}, -- 1, "to bottom"
-	{52 / 128, 104 / 128, 0 / 128, 52 / 128}, -- 2, "new"
-	{0 / 128, 52 / 128, 52 / 128, 104 / 128}, -- 3, "down"
-	{52 / 128, 104 / 128, 52 / 128, 104 / 128}, -- 4, "up"
+	{ 0 / 128,  52 / 128,  0 / 128,  52 / 128 }, -- 1, "to bottom"
+	{ 52 / 128, 104 / 128, 0 / 128,  52 / 128 }, -- 2, "new"
+	{ 0 / 128,  52 / 128,  52 / 128, 104 / 128 }, -- 3, "down"
+	{ 52 / 128, 104 / 128, 52 / 128, 104 / 128 }, -- 4, "up"
 }
 
 local buttons = {}
@@ -49,7 +49,7 @@ local function setUpBaseButton(button, state)
 	button:SetHighlightTexture(0)
 
 	local normalTexture = button:GetNormalTexture()
-	normalTexture:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\scroll-buttons")
+	normalTexture:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\scroll-buttons")
 	normalTexture:ClearAllPoints()
 	normalTexture:SetPoint("TOPLEFT", 3, -3)
 	normalTexture:SetPoint("BOTTOMRIGHT", -3, 3)
@@ -58,7 +58,7 @@ local function setUpBaseButton(button, state)
 	button.NormalTexture = normalTexture
 
 	local pushedTexture = button:GetPushedTexture()
-	pushedTexture:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\scroll-buttons")
+	pushedTexture:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\scroll-buttons")
 	pushedTexture:ClearAllPoints()
 	pushedTexture:SetPoint("TOPLEFT", 4, -4)
 	pushedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
@@ -68,23 +68,26 @@ local function setUpBaseButton(button, state)
 
 	local highlightLeft = button:CreateTexture(nil, "HIGHLIGHT")
 	highlightLeft:SetPoint("TOPLEFT", button, "TOPLEFT", 0, -2)
-	highlightLeft:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\border-highlight")
-	highlightLeft:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g, DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
+	highlightLeft:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\border-highlight")
+	highlightLeft:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g,
+		DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
 	highlightLeft:SetTexCoord(0, 1, 0.5, 1)
 	highlightLeft:SetSize(8, 8)
 
 	local highlightRight = button:CreateTexture(nil, "HIGHLIGHT")
 	highlightRight:SetPoint("TOPRIGHT", button, "TOPRIGHT", 0, -2)
-	highlightRight:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\border-highlight")
-	highlightRight:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g, DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
+	highlightRight:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\border-highlight")
+	highlightRight:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g,
+		DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
 	highlightRight:SetTexCoord(1, 0, 0.5, 1)
 	highlightRight:SetSize(8, 8)
 
 	local highlightMiddle = button:CreateTexture(nil, "HIGHLIGHT")
 	highlightMiddle:SetPoint("TOPLEFT", highlightLeft, "TOPRIGHT", 0, 0)
 	highlightMiddle:SetPoint("TOPRIGHT", highlightRight, "TOPLEFT", 0, 0)
-	highlightMiddle:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\border-highlight")
-	highlightMiddle:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g, DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
+	highlightMiddle:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\border-highlight")
+	highlightMiddle:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g,
+		DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
 	highlightMiddle:SetTexCoord(0, 1, 0, 0.5)
 	highlightMiddle:SetSize(8, 8)
 

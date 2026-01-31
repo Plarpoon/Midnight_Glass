@@ -1,3 +1,5 @@
+---@diagnostic disable: lowercase-global
+
 std = "none"
 max_line_length = false
 max_comment_line_length = 120
@@ -5,21 +7,21 @@ self = false
 
 exclude_files = {
 	".luacheckrc",
-	"ls_Glass/embeds/",
+	"MIDNIGTH_GLASS/embeds/",
 }
 
 ignore = {
-	"111/LS.*", -- Setting an undefined global variable starting with LS
+	"111/LS.*",  -- Setting an undefined global variable starting with LS
 	"111/SLASH_.*", -- Setting an undefined global variable starting with SLASH_
-	"112/LS.*", -- Mutating an undefined global variable starting with LS
-	"113/LS.*", -- Accessing an undefined global variable starting with LS
-	"122", -- Setting a read-only field of a global variable
-	"211/_G", -- Unused local variable _G
-	"211/C", -- Unused local variable C
-	"211/D", -- Unused local variable D
-	"211/E", -- Unused local variable E
-	"211/L", -- Unused local variable L
-	"432", -- Shadowing an upvalue argument
+	"112/LS.*",  -- Mutating an undefined global variable starting with LS
+	"113/LS.*",  -- Accessing an undefined global variable starting with LS
+	"122",       -- Setting a read-only field of a global variable
+	"211/_G",    -- Unused local variable _G
+	"211/C",     -- Unused local variable C
+	"211/D",     -- Unused local variable D
+	"211/E",     -- Unused local variable E
+	"211/L",     -- Unused local variable L
+	"432",       -- Shadowing an upvalue argument
 }
 
 globals = {
@@ -30,4 +32,3 @@ globals = {
 	-- FrameXML
 	"SlashCmdList",
 }
-

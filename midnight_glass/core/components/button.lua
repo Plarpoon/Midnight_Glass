@@ -104,7 +104,7 @@ local function handleButton(frame, ...)
 	frame:SetHighlightTexture(0)
 
 	local normalTexture = frame:GetNormalTexture()
-	normalTexture:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\icons")
+	normalTexture:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\icons")
 	normalTexture:SetTexCoord(...)
 	normalTexture:ClearAllPoints()
 	normalTexture:SetPoint("TOPLEFT", 1, -1)
@@ -112,7 +112,7 @@ local function handleButton(frame, ...)
 	normalTexture:SetVertexColor(C.db.global.colors.lanzones:GetRGB())
 
 	local pushedTexture = frame:GetPushedTexture()
-	pushedTexture:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\icons")
+	pushedTexture:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\icons")
 	pushedTexture:SetTexCoord(...)
 	pushedTexture:ClearAllPoints()
 	pushedTexture:SetPoint("TOPLEFT", 2, -2)
@@ -125,23 +125,26 @@ local function handleButton(frame, ...)
 
 	local highlightLeft = frame.HighlightLeft
 	highlightLeft:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, -2)
-	highlightLeft:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\border-highlight")
-	highlightLeft:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g, DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
+	highlightLeft:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\border-highlight")
+	highlightLeft:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g,
+		DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
 	highlightLeft:SetTexCoord(0, 1, 0.5, 1)
 	highlightLeft:SetSize(8, 8)
 
 	local highlightRight = frame.HighlightRight
 	highlightRight:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, -2)
-	highlightRight:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\border-highlight")
-	highlightRight:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g, DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
+	highlightRight:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\border-highlight")
+	highlightRight:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g,
+		DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
 	highlightRight:SetTexCoord(1, 0, 0.5, 1)
 	highlightRight:SetSize(8, 8)
 
 	local highlightMiddle = frame.HighlightMiddle
 	highlightMiddle:SetPoint("TOPLEFT", highlightLeft, "TOPRIGHT", 0, 0)
 	highlightMiddle:SetPoint("TOPRIGHT", highlightRight, "TOPLEFT", 0, 0)
-	highlightMiddle:SetTexture("Interface\\AddOns\\ls_Glass\\assets\\border-highlight")
-	highlightMiddle:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g, DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
+	highlightMiddle:SetTexture("Interface\\AddOns\\MIDNIGTH_GLASS\\assets\\border-highlight")
+	highlightMiddle:SetVertexColor(DEFAULT_TAB_SELECTED_COLOR_TABLE.r, DEFAULT_TAB_SELECTED_COLOR_TABLE.g,
+		DEFAULT_TAB_SELECTED_COLOR_TABLE.b)
 	highlightMiddle:SetTexCoord(0, 1, 0, 0.5)
 	highlightMiddle:SetSize(8, 8)
 end
