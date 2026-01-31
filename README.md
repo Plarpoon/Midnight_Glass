@@ -10,11 +10,11 @@ Use **`/mglass`** or **`/mg`** to open the in-game config.
 
 ## Feedback and Feature Requests
 
-If you found a bug or want to share an idea on how to improve my addon, either use the issue tracker on [GitHub](https://github.com/ls-/MIDNIGTH_GLASS/issues) or join our [Discord](https://discord.gg/7QcJgQkDYD) server.
+If you found a bug or want to share an idea on how to improve my addon, either use the issue tracker on [GitHub](https://github.com/ls-/MIDNIGHT_GLASS/issues) or join our [Discord](https://discord.gg/7QcJgQkDYD) server.
 
 ## Localisation
 
-Feel free to add and/or review translations on [Curse](https://www.curseforge.com/wow/addons/ls-glass/localization), alternatively, you may create a PR on [project's GitHub page](https://github.com/ls-/MIDNIGTH_GLASS/pulls).
+Feel free to add and/or review translations on [Curse](https://www.curseforge.com/wow/addons/ls-glass/localization), alternatively, you may create a PR on [project's GitHub page](https://github.com/ls-/MIDNIGHT_GLASS/pulls).
 
 ## FAQ
 
@@ -32,8 +32,8 @@ Feel free to add and/or review translations on [Curse](https://www.curseforge.co
 
 ## Credit
 
-This addon is a drop-in replacement for the now outdated MIDNIGTH_GLASS, one of the most beautiful looking addons that I have ever had the pleasure to use of which I will always be glad to all its contributors work for, please check their future work as they are clearly talented individuals. [Original MIDNIGTH_GLASS addon](https://github.com/ls-/MIDNIGTH_GLASS).
+This addon is a drop-in replacement for the now outdated MIDNIGHT_GLASS, one of the most beautiful looking addons that I have ever had the pleasure to use of which I will always be glad to all its contributors work for, please check their future work as they are clearly talented individuals. [Original MIDNIGHT_GLASS addon](https://github.com/ls-/MIDNIGHT_GLASS).
 
 ## License
 
-Please see [LICENSE](https://github.com/ls-/MIDNIGTH_GLASS/blob/master/LICENSE.txt) file.
+Please see [LICENSE](https://github.com/ls-/MIDNIGHT_GLASS/blob/master/LICENSE.txt) file.

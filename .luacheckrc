@@ -7,7 +7,7 @@ self = false
 
 exclude_files = {
 	".luacheckrc",
-	"MIDNIGTH_GLASS/embeds/",
+	"MIDNIGHT_GLASS/embeds/",
 }
 
 ignore = {

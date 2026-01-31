@@ -54,7 +54,7 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 		end
 	end
 
-	C.db = LibStub("AceDB-3.0"):New("MIDNIGTH_GLASS_GLOBAL_CONFIG", D, true)
+	C.db = LibStub("AceDB-3.0"):New("MIDNIGHT_GLASS_GLOBAL_CONFIG", D, true)
 	C.db:RegisterCallback("OnProfileChanged", updateCallback)
 	C.db:RegisterCallback("OnProfileCopied", updateCallback)
 	C.db:RegisterCallback("OnProfileReset", updateCallback)

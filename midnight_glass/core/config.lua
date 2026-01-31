@@ -757,7 +757,7 @@ function E:CreateConfig()
 								type = "execute",
 								name = L["DISCORD"],
 								func = function()
-									showLinkCopyPopup("https://discord.gg/7QcJgQkDYD")
+									showLinkCopyPopup("https://discord.gg/XeQt33sDg8")
 								end,
 							},
 							github = {
@@ -765,7 +765,7 @@ function E:CreateConfig()
 								type = "execute",
 								name = L["GITHUB"],
 								func = function()
-									showLinkCopyPopup("https://github.com/ls-/MIDNIGTH_GLASS/issues")
+									showLinkCopyPopup("https://github.com/Plarpoon/Midnight_Glass/issues")
 								end,
 							},
 						},
@@ -782,7 +782,7 @@ function E:CreateConfig()
 								type = "execute",
 								name = L["CURSEFORGE"],
 								func = function()
-									showLinkCopyPopup("https://www.curseforge.com/wow/addons/ls-glass")
+									showLinkCopyPopup("https://www.curseforge.com/wow/addons/midnight-glass")
 								end,
 							},
 							wago = {
@@ -790,7 +790,7 @@ function E:CreateConfig()
 								type = "execute",
 								name = L["WAGO"],
 								func = function()
-									showLinkCopyPopup("https://addons.wago.io/addons/ls-glass")
+									showLinkCopyPopup("https://addons.wago.io/addons/midnight-glass")
 								end,
 							},
 						},
@@ -815,7 +815,8 @@ function E:CreateConfig()
 								type = "execute",
 								name = L["CHANGELOG_FULL"],
 								func = function()
-									showLinkCopyPopup("https://github.com/ls-/MIDNIGTH_GLASS/blob/master/CHANGELOG.md")
+									showLinkCopyPopup(
+										"https://github.com/Plarpoon/Midnight_Glass/blob/master/CHANGELOG.md")
 								end,
 							},
 						},
