@@ -628,13 +628,18 @@ function E:CreateConfig()
 								type = "toggle",
 								name = L["MOUSEOVER_TOOLTIPS"],
 							},
-							smooth = {
+							timestamp = {
 								order = 2,
+								type = "toggle",
+								name = L["TIMESTAMP"],
+							},
+							smooth = {
+								order = 3,
 								type = "toggle",
 								name = L["SMOOTH_SCROLLING"],
 							},
 							up_and_down = {
-								order = 3,
+								order = 4,
 								type = "toggle",
 								name = L["SCROLL_BUTTONS"],
 								get = function()
@@ -730,6 +735,39 @@ function E:CreateConfig()
 							["9"] = createChatFrameConfig(9, 28),
 							["10"] = createChatFrameConfig(10, 29),
 						},
+					},
+				},
+			},
+			debug = {
+				order = 105,
+				type = "group",
+				name = L["DEBUG"],
+				args = {
+					warning = {
+						order = 1,
+						type = "description",
+						name = L["DEBUG_WARNING"],
+						fontSize = "medium",
+						image = "Interface\\OPTIONSFRAME\\UI-OptionsFrame-NewFeatureIcon",
+						imageWidth = 16,
+						imageHeight = 16,
+					},
+					spacer_1 = createSpacer(9),
+					debug_toggle = {
+						order = 10,
+						type = "toggle",
+						name = L["DEBUG_MODE"],
+						desc = L["ENABLE"] .. " / " .. _G.DISABLE,
+						width = "full",
+						get = function()
+							return C.db.profile.debug
+						end,
+						set = function(_, value)
+							C.db.profile.debug = value
+							E.DEBUG = value
+							print("|cff00ff00[MidnightGlass]|r Debug mode:",
+								E.DEBUG and "|cff00ff00ON|r" or "|cffff0000OFF|r")
+						end,
 					},
 				},
 			},

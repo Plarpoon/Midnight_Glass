@@ -61,6 +61,8 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 	C.db:RegisterCallback("OnProfileShutdown", shutdownCallback)
 	C.db:RegisterCallback("OnDatabaseShutdown", shutdownCallback)
 
+	E.DEBUG = C.db.profile.debug
+
 	E:RegisterEvent("PLAYER_LOGIN", function()
 		E:CreateFonts()
 		E:HandleDock(GeneralDockManager)
@@ -240,7 +242,8 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 
 		SLASH_MGDEBUG1 = "/mgdebug"
 		SlashCmdList["MGDEBUG"] = function(msg)
-			E.DEBUG = not E.DEBUG
+			C.db.profile.debug = not C.db.profile.debug
+			E.DEBUG = C.db.profile.debug
 			print("|cff00ff00[MidnightGlass]|r Debug mode:", E.DEBUG and "|cff00ff00ON|r" or "|cffff0000OFF|r")
 		end
 	end)

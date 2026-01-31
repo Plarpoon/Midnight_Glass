@@ -45,16 +45,16 @@ D.profile = {
 		tooltips = true,
 		smooth = true,
 		fade = {
-			enabled = true, -- if disabled, messages don't fade out
+			enabled = true,
 			click = false,
 			out_delay = 60,
 		},
 		buttons = {
 			up_and_down = false,
 		},
+		timestamp = false,
 		["*"] = {
 			alpha = 0.4,
-			-- solid = false,
 			x_padding = 8,
 			y_padding = 0,
 			font = {
@@ -64,6 +64,7 @@ D.profile = {
 			},
 		},
 	},
+	debug = false,
 	dock = { -- tabs & buttons
 		alpha = 0.8,
 		-- font = {

@@ -58,3 +58,8 @@ L["SUPPORT"] = "Support"
 L["TOP"] = "Top"
 L["X_PADDING"] = "Horizontal Padding"
 L["Y_PADDING"] = "Vertical Padding"
+L["DEBUG"] = "Debug"
+L["DEBUG_MODE"] = "Debug Mode"
+L["DEBUG_WARNING"] =
+"Only enable this if you're experiencing issues and planning to report them. For support, visit Discord or GitHub (see Info tab)."
+L["TIMESTAMP"] = "Timestamp"
