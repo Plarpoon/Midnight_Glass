@@ -6,7 +6,9 @@ local _G = getfenv(0)
 
 -- Mine
 E.CHANGELOG = [[
-- Ported addon from LS:Glass to Midnight_Glass
-- Added12.0.0 support.
-- Several changes under the hood for better performance.
+- The initial release.
+- Ported project from LS: Glass
+- Updated the code to World of Warcraft: Midnight
+- Introduced timestamp option
+- Introduced "Debug" mode for the addon
 ]]
